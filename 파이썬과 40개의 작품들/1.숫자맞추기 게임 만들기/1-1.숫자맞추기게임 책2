@@ -1,0 +1,26 @@
+import random
+
+#랜덤 값 정수 받아서 변수에 저장
+random_number = random.randint(1,100)
+
+#게임 회수 세는 변수
+game_count =1
+
+#무한반복문
+while True:
+    try:
+        #값 받기
+        my_number = int(input("1~100 사이의 숫자를 입력하세요: "))
+
+        #입력 숫자가 랜덤값보다 크면 다운, 반대면 업, 맞추면 종료
+        if my_number > random_number:
+            print("다운")
+        elif my_number < random_number:
+            print("업")  
+        else:
+            print(f"정답! {game_count}회 만에 맞췄네요!")
+            break
+        # 못 맞출 때마다 카운트가 올라감
+        game_count +=1
+    except:
+        print("에러가 발생하였습니다. 숫자를 입력하세요")
